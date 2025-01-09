@@ -1,0 +1,437 @@
+//varibles.......
+//var name = 'appu';
+let name= 'appu';
+let age=40;
+let hobby = 'reading';
+  
+let user= {
+    name : 'appu',
+    age: 40,
+    hobby : 'reading',
+};
+console.log(user);
+console.log(user.name);
+
+//javascript array
+let friends = ['appu','jack','mouli','avinash'];
+console.log(friends[1]);
+console.log(friends);
+console.log(typeof friends)
+
+console.log(friends.length);
+
+
+//java script functions
+
+function show(name){
+  console.log('my name is appu' + name );
+}
+    
+show('Appu');
+show('mouli');
+
+// let num1=30;
+// let num2=20;
+// let sum=num1+num2;
+// console.log(sum);
+
+function cal(num1,num2)
+{
+  const sum=num1+num2;
+  console.log(sum);
+}
+cal(10,20);
+
+// Template literals
+let name= 'appu';
+console.log(name);
+console.log('my name is $(name)');
+
+console.log(`${30+20}`);
+let messgae = `my name is
+appu 
+mouli`;
+console.log(messgae);
+
+//exercise
+
+let person= {
+    name:'appu',
+    age:21,
+    single:true,
+
+    homeAd: {
+        long:44.55,
+        lat:33.44,
+    },
+    friends :['appu','mouli','avinash'],
+};
+console.log(person);
+console.log(person.name);
+console.log(person.homeAd.long);
+
+
+//arithmetic operators
+let num1 = 10;
+let num2=20;
+ console.log(num1+num2);
+ console.log(num1-num2);
+ console.log(num1*num2);
+ console.log(num1/num2);
+
+//logical operator
+
+let price=10;
+console.log(price>5 && price <15);
+console.log(price>50 || price <6)
+console.log(!(price>5))
+
+const objs={
+    name:'appu',
+    age:40,
+}
+
+for(let key in objs)
+{
+    console.log(key,objs[key]);
+}
+
+let a=[6,4,3,2,1];
+for(let key in a)
+{
+    console.log(key);
+}
+
+for(let num of a)
+{
+    console.log(num);
+}
+
+let cou='my name is appu';
+console.log(cou);
+console.log(typeof cou);
+console.log(cou.charAt(4));
+console.log(cou.toUpperCase());
+console.log(cou.toLowerCase());
+console.log(cou.includes('m','a'));
+console.log(cou.startsWith('my'));
+
+console.log(cou.endsWith('my'));
+
+let cou='my name is appu';
+let a =10;
+console.log(cou);
+console.log(cou.search('my'));
+console.log(cou.indexOf('a'));
+console.log(cou.lastIndexOf('is'));
+console.log(typeof addEventListener.toString());
+
+let message= 'hi appala naidu \\"you\'s are doing nice work"\nhow are you'
+console.log(message);
+
+
+const user={
+    name:'appu',
+    age:21,
+    isMarried:true,
+};
+//add
+user.email='appu@gmail.com';
+user.age=user.age+40;
+let key="appi";
+user[key]="aaaaaaaaaaaa";
+//update
+user.isMarried='false';
+user.appi="nenu appu";
+//delete
+delete user.age;
+console.log(user);
+
+
+const user={
+    name:'appu',
+    age:40,
+    isMarried:true,
+    friends:['mouli','avinash'],
+    selectColor:null,
+    calculateAge:function(){
+        console.log(`i am ${this.age} appu `);
+    }
+};
+//this and objects
+user.calculateAge();
+console.log(user)
+
+
+const user={
+    name:'appu',
+    age:40,
+    isMarried:true,
+    friends:['mouli','avinash'],
+    email:'appu@gmail.com'
+    };
+    //one way
+    for(let key in user)
+    {
+        console.log(key,user[key]);
+    }
+
+    //seconf way
+    console.log(Object.keys(user))
+    console.log(Object.values(user));
+
+    for (let val of Object.values(user))
+    {
+        console.log(val);
+    }
+
+const sal={
+    appu:2000,
+    maouli:3000,
+    avinash:4000,
+};
+let sum=0;
+for(let key in sal)
+{
+    console.log(key,sal[key]);
+    sum=sum+sal[key];
+}
+console.log(sum);
+console.log(Object.values(sal));
+let sum1=0;
+for(let val of Object.values(sal))
+{
+    sum1+=val;
+}
+console.log(sum1);
+
+//object distraction
+
+const user={
+    name:'appu',
+    age:21,
+    favBook:{
+           bookname:'appu jivitha chirithara',
+           bookauthor:'appu'
+    },
+};
+const {name, age,favBook}=user;
+console.log(name);
+console.log(favBook)
+console.log(user.name);
+console.log(user.age);
+console.log(user.favBook.bookauthor);
+console.log(user.favBook.bookname);
+
+cloning object
+------------------
+const user={
+    name:'appu',
+    age:21,
+    favBook:{
+           bookname:'appu jivitha chirithara',
+           bookauthor:'appu'
+    },
+};
+const copiediuser =Object.assign({},user)
+console.log(copiediuser)
+
+
+//math object
+
+console.log(Math.PI)
+console.log(Math.random())
+console.log(Math.round(4.8))
+
+//json data formate
+
+const user={
+    name:'appu',
+    age:40,
+};
+
+const jsonData=JSON.stringify(user)
+console.log(JSON.parse(jsonData));
+console.log(jsonData);
+
+function mul(...args)
+{
+  let m=1;
+  for(let num of args)
+  {
+    m=m*num;
+  }
+  return m;
+}
+
+console.log(mul(1,2,3,6));
+
+
+const doc=[
+    {name:'appu',age:20},
+    {name:'jack',age:22},
+    {name:'vasa',age:24},
+];
+const result=doc.find(function(doc){
+        return doc.age !=0;
+});
+console.log(result);
+
+const arr=[1,2,3,4,5,6,7,8];
+// for(let index=0;index<arr.length;index++)
+// {
+//     console.log(arr[index]);
+// }
+
+// for(let num of arr){
+//     console.log(num);
+// }
+
+arr.forEach(function(num){
+    console.log(num);
+});
+
+
+const number=[6,8,7,-2,19];
+const data = number.some(function(num){
+    return num>0;
+})
+console.log(data);
+
+//spread operator
+const number=[6,8,7,-2,19];
+const num=[ 2,3,4];
+const a=[...number,...num];
+console.log(a);
+
+//join metho
+
+let number=[1,2,3,4,5,6];
+let join=number.join('  ');
+console.log(join)
+
+map:----------
+let  a=[1,2,3,4];
+let mul=[];
+// for(let num of a)
+// {
+//     mul.push(num*2);
+// }
+// console.log(mul);
+
+// const mul1=a.map(function(num)
+// {
+//     return num*2;
+// })
+// console.log(mul1);
+
+const mul1=a.map((num)=>num*2);
+console.log(mul1)
+const doctor=[
+    {name:'appu', age:21},
+    {name:'avi',age:23},
+    {name:'mouli',age:24},
+];
+const docname=doctor.map((doc)=>doc.age);
+console.log(docname);
+
+filter:----------->
+-----------------------
+const a=[1,2,3,4,5,6];
+const odd=a.filter((num)=>num%2==1);
+console.log(odd);
+
+object distracting
+-----------------
+const user={
+    name:"appu",
+    age:21,
+    address:
+    {
+        streat:"rambazan streat",
+        village:"kannapudoravalasa",
+    },
+};
+
+function person(user)
+{  
+    const {name,age,address}=user;
+    const {streat,village}=address;
+    console.log(`hi my name is \'${name}'and age ${age} from ${streat} and my village ${village}`);
+}
+
+person(user);
+
+//set method
+
+//data structure :Set
+
+let set= new Set();
+set.add(100);
+set.add(200);
+set.add(100);
+console.log(set);
+console.log(set.size);
+//set.delete(200)
+for(let ele of set)
+{
+    console.log(ele);
+}
+console.log(set)
+
+set.forEach((ele)=>console.log(set));
+
+//set.clear();
+console.log(set)
+
+//map
+---------
+let map = new Map();
+map.set('mango',"avi");
+map.set("apple",'appu');
+console.log(map)
+
+for(let ele of map)
+{
+    console.log(ele);
+}
+
+console.log(map.has('mango'))
+// map.delete('appu');
+console.log(map)
+
+console.log(map.values());
+console.log(map.keys());
+
+const ws=new WeakSet();
+const obj={};
+const obj2={};
+ws.add(obj);
+console.log(ws);
+console.log(ws.has(obj));
+
+const wm=new WeakMap();
+wm.set(obj,1234);
+console.log(wm)
+console.log(wm.has(1234));
+
+//module---
+-----------
+const addnumber=(num1,num2)=>num1+num2;
+
+export default addnumber;
+
+import addnumber from './main.js';
+
+console.log(addnumber(10,20));
+
+//pad start,pad end,trim
+let min='4';
+let hour='8';
+console.log(min.padStart(4,'2'));
+console.log(hour.padEnd(3,'0'));
+
+let trimn='  appu  ';
+console.log(trimn.length);
+trimn=trimn.trimEnd();
+console.log(trimn.length);

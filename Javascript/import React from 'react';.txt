@@ -1,0 +1,238 @@
+import React from 'react';
+class App extends React.Component{
+  state={
+    username:"",
+    phonenumber:"",
+    age:'',
+    city:""
+  }
+  // changedata= (event) => {
+  //   let val=event.target.name;//username
+  //   let myvalue =event.target.value//getting value
+  //   this.setState({[val]:myvalue})//value set 
+  // }
+  formsubmit= (event) =>
+  {
+    event.preventDefault();
+    console.log("succssfly submited");
+  }
+  render()
+  {
+    return(
+      <div className='App'>
+           <h1>{this.state.username}</h1>
+           <h1>{this.state.phonenumber}</h1>
+           <h1>{this.state.age}</h1>
+           <h1>{this.state.city}</h1>
+      <div>
+      <form  onSubmit={this.formsubmit}>
+         <div class="form-group" style={{marginLeft:200}}>
+          <lable>user name:</lable><br></br>
+          <input type='email' name="username"onChange={(event)=>
+{this.setState({username:event.target.value})}}></input><br></br>
+          <input type='text' name="phonenumber"onChange={(event)=>{this.setState({phonenumber:event.target.value})}}></input><br></br>
+          <input type='text' name="age"onChange={(event)=>{this.setState({age:event.target.value})}}></input><br></br>
+          <input type='text' name="city"onChange={(event)=>{this.setState({city:event.target.value})}}></input><br></br>
+          <button type='submit'>submit</button><br></br>
+         </div>
+      </form>
+      </div>
+      </div>
+    )
+  }
+}
+
+export default App;
+
+
+
+
+import React from 'react';
+class App extends React.Component{
+  state={
+    username:"",
+    password:"",
+    emailerror:"",
+    passerror:""
+  }
+  // changedata= (event) => {
+  //   let val=event.target.name;//username
+  //   let myvalue =event.target.value//getting value
+  //   this.setState({[val]:myvalue})//value set 
+  // }
+
+  validate()
+  {
+    if(!this.state.username>0 && !this.state.password>0)
+    {
+      this.setState({emailerror:"enter email pass requried "})    
+    }
+    else if(!this.state.username>0)
+    {
+      
+      this.setState({emailerror:"email requried"})
+    }
+    else if(!this.state.password>0)
+    {
+      this.setState({passerror:"enter email pass requried "})    
+    }
+    else{
+      return true;
+    }
+  }
+  formsubmit= (event) =>
+  {
+    event.preventDefault();
+    if(this.validate())
+    {
+      alert("submit the form")
+    }
+  }
+  render()
+  {
+    return(
+      <div className='App'>
+           <h1>{this.state.username}</h1>
+           <h1>{this.state.password}</h1>
+      <div>
+      <form  onSubmit={this.formsubmit}>
+         <div class="form-group" style={{marginLeft:200}}>
+          <lable>user name:</lable><br></br>
+          <input type='email' name="username"onChange={(event)=>{this.setState({username:event.target.value})}}></input><br></br>
+          <strong style={{color:'red'}}>{this.state.emailerror}</strong>
+          <lable>password:</lable><br></br>
+          <input type='password' name="password"onChange={(event)=>{this.setState({password:event.target.value})}}></input><br></br>
+          <strong style={{color:'red'}}>{this.state.passerror}</strong><br></br>
+          <button type='submit'>submit</button><br></br>
+         </div>
+      </form>
+      </div>
+      </div>
+    )
+  }
+}
+
+export default App;
+
+
+
+import React from 'react';
+class App extends React.Component{
+  state={
+    username:"",
+    password:"",
+    emailerror:"",
+    passerror:"",
+    details:""
+  }
+  // changedata= (event) => {
+  //   let val=event.target.name;//username
+  //   let myvalue =event.target.value//getting value
+  //   this.setState({[val]:myvalue})//value set 
+  // }
+
+  validate()
+  {
+    if(!this.state.username>0 && !this.state.password>0)
+    {
+      this.setState({emailerror:"enter email pass requried "})    
+    }
+    else if(!this.state.username>0)
+    {
+      
+      this.setState({emailerror:"email requried"})
+    }
+    else if(!this.state.password>0)
+    {
+      this.setState({passerror:"enter email pass requried "})    
+    }
+    else{
+      return true;
+    }
+  }
+  formsubmit= (event) =>
+  {
+    event.preventDefault();
+    if(this.validate())
+    {
+      alert("submit the form")
+    }
+  }
+  render()
+  {
+    return(
+      <div className='App'>
+           <h1>{this.state.username}</h1>
+           <h1>{this.state.password}</h1>
+      <div>
+      <form  onSubmit={this.formsubmit}>
+         <div class="form-group" style={{marginLeft:200}}>
+          <lable>user name:</lable><br></br>
+          <input type='email' name="username"onChange={(event)=>{this.setState({username:event.target.value})}}></input><br></br>
+          <strong style={{color:'red'}}>{this.state.emailerror}</strong>
+          <lable>password:</lable><br></br>
+          <input type='password' name="password"onChange={(event)=>{this.setState({password:event.target.value})}}></input><br></br>
+          <strong style={{color:'red'}}>{this.state.passerror}</strong><br></br>
+          <label>Details:</label><br></br>
+          <textarea onChange={(event)=>{this.setState({details:event.target.value})}}>write on here</textarea><br></br>
+          <h6>{this.state.details}</h6>
+          <lable>select:</lable> 
+          <select onChange={(event)=>{this.setState({fruit:event.target.value})}}>
+            <option value=""selected disabled>select your fruit</option>
+            <option>mango</option>
+            <option>apple</option>
+            <option>bananna</option>
+            <option>orange</option>
+          </select>
+           <br></br>
+           <h6>my fruit:{this.state.fruit}</h6>
+           <list></list>
+          <button type='submit'>submit</button><br></br>
+         </div>
+      </form>
+      </div>
+      </div>
+    )
+  }
+}
+
+
+import React,{ useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+export const App =() =>
+{
+  const [count,inccount] = useState(0)
+  return(
+    <div>
+      <h1>clicking me {count}</h1>
+      <button onClick={()=>{inccount(count+2  )}}>click me</button>
+    </div>
+  );
+}
+export default App;
+export default App;
+
+
+import React from "react";
+
+class List extends React.Component{
+    render()
+    {
+        const names=['aa','bb','cc','dd' ]
+        const items = names.map((items,idx)=>{
+            return <li>{idx}-{items}</li>
+        });
+        return(
+            <div className="list">
+                <h1>student list</h1>
+               {items}
+                <div>
+
+                </div>
+            </div>
+        )
+    }
+}
+
+export default List;

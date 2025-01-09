@@ -1,0 +1,175 @@
+
+class Learning extends Component{
+
+	state={
+		fruits:[
+		{name:"mango",weight:'250gm'},
+		{name:"apple",weight:"230gm"},
+		{name:"orange",weight:"260gm"},
+		]
+	}
+      render()
+      {
+    	return( 
+    		<div>
+    		<h1>fruit name is {this.state.fruits[0].name}</h1>
+    		<h1>fruit name is {this.state.fruits[1].name}</h1>
+    		<h1>fruit name is {this.state.fruits[2].name}</h1>
+    		</div>)
+    	}
+    }
+
+
+export default Learning
+
+
+
+
+import React,{Component} from "react";
+class Check extends Component{
+    // constructor(props){
+    //     super(props);
+    //     this.state={
+    //         men:[
+    //             {name:'appu'}
+                
+    //         ]
+    //     }
+    // }
+
+    state= {
+        name:"appu"
+    }
+    change=(event) => {
+        this.setState(
+            {name:event.target.value}
+        )
+    }
+    render()
+    {
+        return(
+            <div>
+                <input type="text" onChange={this.change}></input>
+              <h1>hello {this.state.name} easy learning</h1>
+            </div>
+        )
+    }
+}
+export default Check
+
+
+
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Learn from './components/hello'
+import Learning from './components/Learning'
+import Hook from './components/Hook'
+import Check from './components/check'
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+      {/* <img src={logo} className="App-logo" alt="logo"/> */}
+        {/* <Learn name="mango"/>
+        <Learn name="apple" /> */}
+        {/* <Hook/> */}
+        <Learning/>
+        <Check/>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+
+onchange.............
+
+import React from 'react';
+class App extends React.Component{
+  state={
+    name:""
+  }
+  changedata= (event) => {
+    let val=event.target.value;
+    this.setState({name:val})
+  }
+  render()
+  {
+    return(
+      <div className='App'>
+           <h1>hello appu mouli {this.state.name} easy learning</h1>
+      <div>
+      <from>
+         <div class="form-group" style={{marginLeft:200}}>
+          <lable>user name:</lable><br></br>
+          <input type='text' name="username"onChange={this.changedata}></input><br></br>
+          <button type='submit'>submit</button><br></br>
+         </div>
+      </from>
+      </div>
+      </div>
+    )
+  }
+}
+
+export default App;
+
+
+
+
+import React from 'react';
+class App extends React.Component{
+  render()
+  {
+    return(
+      <div className='App'>
+           <h1>hello appu mouli easy learning</h1>
+      <div>
+      <from>
+         <div class="form-group">
+          <lable>user name:</lable><br></br>
+          <input type='text' name="username"></input><br></br>
+          <button type='submit'>submit</button><br></br>
+         </div>
+      </from>
+      </div>
+      </div>
+    )
+  }
+}
+
+export default App;
+
+
+import React from 'react';
+class App extends React.Component{
+  state={
+    username:""
+  }
+  changedata= (event) => {
+    let val=event.target.name;//username
+    let myvalue =event.target.value//getting value
+    this.setState({[val]:myvalue})//value set 
+  }
+  render()
+  {
+    return(
+      <div className='App'>
+           <h1>hello{this.state.username}</h1>
+      <div>
+      <from on>
+         <div class="form-group" style={{marginLeft:200}}>
+          <lable>user name:</lable><br></br>
+          <input type='text' name="username"onChange={this.changedata}></input><br></br>
+          <button type='submit'>submit</button><br></br>
+         </div>
+      </from>
+      </div>
+      </div>
+    )
+  }
+}
+
+export default App;
+
